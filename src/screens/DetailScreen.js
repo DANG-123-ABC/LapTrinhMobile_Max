@@ -1,4 +1,5 @@
-import { Text, View, Pressable, Image,ToastAndroid } from "react-native";
+//import { Text, View, Pressable, Image,ToastAndroid } from "react-native";
+import { Text, View, Pressable, Image} from "react-native";
 import React, { useContext, useEffect, useState } from "react";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 import { getProductById } from "../features/firebase/product";
@@ -8,7 +9,7 @@ import { addToCart } from "../features/firebase/cart";
 import { SafeAreaView } from "react-native-safe-area-context";
 import CartContext from "../features/cartContext";
 
-// const sizes = ["S", "M", "L", "XL", "XXL"];
+ //const sizes = ["S", "M", "L", "XL", "XXL"];
 
 const DetailScreen = ({navigation,route}) => {
   const {currentProduct:product,setCurrentProduct}= useContext(ProductContext);
@@ -33,7 +34,7 @@ const DetailScreen = ({navigation,route}) => {
   const addItemToCart = async() => {
     const res = await addToCart(id,qty)
     if(res.success===true){
-      ToastAndroid.show("item added to cart",ToastAndroid.BOTTOM)
+     // ToastAndroid.show("item added to cart",ToastAndroid.BOTTOM)
       setCartItems(res.data)
     }
   }
@@ -54,10 +55,10 @@ const DetailScreen = ({navigation,route}) => {
          h-10 w-10 mx-4 rounded-full bg-black">
           <MaterialIcons name="chevron-left" size={34} color={"#fff"} />
         </Pressable>
-          <Image source={{uri:product?.image}} style={{resizeMode:"cover"}} className=" h-[470]" />
+          <Image source={{uri:product?.image}} style={{resizeMode:"cover"}} className=" h-[570]" />
       </View>
 
-      <View className="rounded-[30px]  bg-white mt-[-20px] p-5">
+      <View className="rounded-[10px]  bg-white mt-[-20px] p-5">
         <View>
         <View className="flex-row justify-between">
             <View>
@@ -77,7 +78,7 @@ const DetailScreen = ({navigation,route}) => {
                 </View>
             </View>
         </View>
-        {/* <View className="mt-6">
+         {/* <View className="mt-6">
           <Text className="font-extrabold mb-3">Size</Text>
           <View className="flex-row justify-evenly">
           {sizes.map((size) => (
@@ -86,8 +87,8 @@ const DetailScreen = ({navigation,route}) => {
             </View>
           ))}
           </View>
-        </View> */}
-        <View className="mt-6">
+        </View>  */}
+        <View className="mt-5">
           <Text className="font-extrabold mb-3">Description</Text>
           <ScrollView className="h-36">
           <Text className="text-gray-500 text-xs">
@@ -101,7 +102,7 @@ const DetailScreen = ({navigation,route}) => {
       <View className="flex-row justify-between items-center mt-8">
         <View >
           <Text className="text-gray-500 mb-[-4px]">Total Price</Text>
-          <Text className="font-bold text-lg">${product?.price}</Text>
+          <Text className="font-bold text-lg">{product?.price} VNĐ</Text>
         </View>
         <Pressable onPress={addItemToCart} className="items-center bg-black px-6 py-3 rounded-3xl" >
           <Text className="text-white font-semibold">Add to Cart</Text>

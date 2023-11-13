@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View,Pressable,ToastAndroid } from "react-native";
+import { StyleSheet, Text, View,Pressable} from "react-native";
 import React, { useContext } from "react";
 import CartContext from "../features/cartContext";
 import { addToOrders } from "../features/firebase/order";
@@ -11,7 +11,7 @@ const TotalSummaryCard = ({totalPrice}) => {
   const placeOrder = async () => {
     const res = await addToOrders();
     if(res.success===true){
-      ToastAndroid.show("Order places successfully!!!",ToastAndroid.BOTTOM)
+      //ToastAndroid.show("Order places successfully!!!",ToastAndroid.BOTTOM)
       setCartItems([])
       setOrderItems(res.data)
     }
@@ -21,7 +21,7 @@ const TotalSummaryCard = ({totalPrice}) => {
     <View className="border border-gray-200 rounded-lg p-6">
       <View className="flex-row justify-between items-center">
         <Text className="font-bold text-lg">Total Price:</Text>
-        <Text className="font-extrabold text-xl">${totalPrice}</Text>
+        <Text className="font-extrabold text-xl">{totalPrice} VNĐ</Text>
       </View>
       <Pressable onPress={placeOrder} className="bg-black py-4 rounded-lg mt-6">
         <Text className="font-semibold text-white text-center">Place Order</Text>

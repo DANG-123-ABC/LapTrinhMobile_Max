@@ -37,7 +37,7 @@ const ProductListScreen = ({ navigation }) => {
       fetchAllProducts();
   }, []);
   return (
-    <SafeAreaView className="flex-1 w-full px-4 bg-white">
+    <SafeAreaView className="flex-1 w-full px-4 bg-grey">
       <ScrollView showsVerticalScrollIndicator={false}>
         {products?.map((product) => (
           <Pressable key={product.id} onPress={() => navigation.navigate("detailscreen",{

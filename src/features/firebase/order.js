@@ -22,7 +22,7 @@ export const addToOrders = async () => {
             })
         })
         await updateDoc(userDocRef,{orders:orderItems,cart:[]});
-        console.log("items added to order")
+    //    console.log("items added to order")
         return {success:true,data:orderItems}
     }
 }

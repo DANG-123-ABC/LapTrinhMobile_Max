@@ -3,6 +3,7 @@ import React from 'react'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { CartStackNavigator, MainStackNavigator, OrderStackNavigator, ProfileStackNavigator } from './StackNavigator'
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
+import Example from '../components/InforShop';
 
 const Tab = createBottomTabNavigator()
 
@@ -48,6 +49,14 @@ const TabNavigator = () => {
        options={{
         tabBarIcon: ({ size, color }) => (
           <MaterialIcons name="account-circle" size={size} color={color} />
+        ),
+      }}
+      />
+
+      <Tab.Screen name='info' component={Example} 
+       options={{
+        tabBarIcon: ({ size, color }) => (
+          <MaterialIcons name="info" size={size} color={color} />
         ),
       }}
       />

@@ -11,7 +11,7 @@ const CartItem = ({title,image,price,brand,qty,id}) => {
   const removeItem = async() =>{
     const res = await removeItemById(id)
     if(res.success===true){
-      ToastAndroid.show("Removed Successfully",ToastAndroid.BOTTOM)
+     // ToastAndroid.show("Removed Successfully",ToastAndroid.BOTTOM)
       setCartItems(res.data)
     }
   }
@@ -20,14 +20,15 @@ const CartItem = ({title,image,price,brand,qty,id}) => {
     <View >
     <View className="flex-row">
       <View className="p-2">
-        <Image source={{uri:image}} className="rounded-xl h-20 w-20 object-contain" />
+      {/* object-contain: giữ tỷ lệ của ảnh */}
+        <Image source={{uri:image}} className="rounded-xl h-20 w-20 object-contain" /> 
       </View>
       <View className="flex-1 flex-row  justify-between items-center w-[100%]  px-4">
         <View className="w-[50%]">
           <Text className="font-bold" numberOfLines={1}>{title}</Text>
           <Text className="text-xs">{brand}</Text>
           <Text className="font-extrabold">Qty: {qty}</Text>
-          <Text className="font-extrabold">${price}</Text>
+          <Text className="font-extrabold">{price} VNĐ</Text>
         </View>
         <View className="flex-row  px-3 h-8 justify-center items-center bg-gray-200  rounded-3xl">
           <Pressable onPress={removeItem} className="mr-2 flex-row">

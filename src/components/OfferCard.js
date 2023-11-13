@@ -1,23 +1,23 @@
 import { StyleSheet, Text, View, Pressable, Image } from "react-native";
 import React from "react";
-import Suit from "../../assets/suit.png";
+import Dang from "../../assets/dang.png";
 
 const OfferCard = () => {
   return (
-    <View className="flex-row max-w-[250px] py-2 mr-6 max-h-[160px] overflow-hidden bg-[#c7c7c7] rounded-2xl">
+    <View className="flex-row max-w-[350px] py-2 mr-6 max-h-[160px] overflow-hidden bg-[#c7c7c7] rounded-2xl">
       <View className="px-4 py-2">
         <Text className="font-extrabold text-2xl">50% Off</Text>
-        <Text className="text-lg">On everything today</Text>
-        <Text className="text-xs my-2">With code: FSCREATION</Text>
+        <Text className="text-lg">Black friday</Text>
+        <Text className="text-xs my-2">With code: Coder dep trai</Text>
 
-        <Pressable className="bg-black w-20 rounded-2xl">
-          <Text className="text-white text-xs font-semibold mx-3 my-1">
+        <Pressable className="bg-black w-20 rounded-2xl mt-2">
+          <Text className="text-white text-xs font-semibold mx-3 my-2  ">
             Get Now
           </Text>
         </Pressable>
       </View>
       <View>
-        <Image source={Suit} className="object-contain h-[150px] w-[55px]" />
+        <Image source={Dang} className=" h-[140px] w-[120px] ml-10" />
       </View>
     </View>
   );

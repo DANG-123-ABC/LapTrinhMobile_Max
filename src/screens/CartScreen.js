@@ -42,9 +42,9 @@ const Cart = ({ navigation }) => {
       </View>
       {isLoggedIn ? (
           <ScrollView className="mt-4 " showsVerticalScrollIndicator={false}>
-            {cartItems?.map((item) => (
+            {cartItems?.map((item) => ( // dùng map để lặp qua mảng cartItem
               <CartItem
-                key={item.id}
+                key={item.id} // đặt key cho mỗi item
                 id={item.id}
                 title={item.title}
                 brand={item.brand}

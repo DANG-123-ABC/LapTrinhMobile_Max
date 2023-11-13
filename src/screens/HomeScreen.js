@@ -1,3 +1,4 @@
+
 import { Text, View, Image, ScrollView, Pressable } from "react-native";
 import React, { useCallback, useContext, useEffect, useState } from "react";
 import { TextInput } from "react-native-gesture-handler";
@@ -86,6 +87,7 @@ const Home = ({ navigation }) => {
             horizontal={true}
             showsHorizontalScrollIndicator={false}
           >
+          
             {products?.map(product=>
             <Pressable key={product.id} 
             onPress={() => navigation.navigate("detailscreen",
@@ -106,3 +108,4 @@ const Home = ({ navigation }) => {
 };
 
 export default Home;
+

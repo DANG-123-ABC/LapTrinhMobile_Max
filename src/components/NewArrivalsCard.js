@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View,Image } from 'react-native'
 import React from 'react'
-import Bag from "../../assets/bag.png"
+
 
 const NewArrivalsCard = ({title,brand,price,image}) => {
   return (
@@ -9,7 +9,7 @@ const NewArrivalsCard = ({title,brand,price,image}) => {
       <View className="mt-2 justify-center items-center">
       <Text className="font-bold">{title}</Text>
       <Text className="text-xs">{brand}</Text>
-      <Text className="font-extrabold">${price}</Text>
+      <Text className="font-bold">{price} VNĐ</Text>
       </View>
     </View>
   )
