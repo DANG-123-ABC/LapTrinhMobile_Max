@@ -6,11 +6,11 @@ import { View, Image, ScrollView, Dimensions, StyleSheet } from 'react-native';
 
 
 const images = [
-  'https://scontent.fhan14-4.fna.fbcdn.net/v/t31.18172-8/11411633_886323334787274_3987837880620351992_o.jpg?_nc_cat=102&ccb=1-7&_nc_sid=2be8e3&_nc_eui2=AeGq2UWbQ-HBrsps4xUO67r5wWTwUubqj3bBZPBS5uqPdv2_UMSQA7Wz25ycmZ_HOc8fMfa5TAZNfdzBclInGIEw&_nc_ohc=3uujC0HUW7MAX_RL6nZ&_nc_ht=scontent.fhan14-4.fna&cb_e2o_trans=t&oh=00_AfDKxnIK7mkDDTh4ZSptSgQK2Nnt6cj66ikvArBnAyiw1w&oe=6577ABC2',
-  'https://scontent.fhan14-3.fna.fbcdn.net/v/t31.18172-8/11194482_856314094454865_4595498020859938831_o.jpg?_nc_cat=110&ccb=1-7&_nc_sid=2be8e3&_nc_eui2=AeHL4ySGmtfkh4Sf02Gsu9tKUR4Ka9CcES1RHgpr0JwRLVdsO7sjjOWAEM3pjXaiIgy5qPYXEDGjHekKFcgCU6GJ&_nc_ohc=LQaSbuCpqzkAX9enaUR&_nc_ht=scontent.fhan14-3.fna&cb_e2o_trans=t&oh=00_AfDFZfqkqCwTKqA9rIFcfOuS0dJ2QPZADxNhX4l7-FMbcQ&oe=6577AB3D',
-  'https://scontent.fhan14-1.fna.fbcdn.net/v/t31.18172-8/10887509_785644394855169_884990385198599371_o.jpg?_nc_cat=107&ccb=1-7&_nc_sid=2be8e3&_nc_eui2=AeFeG_F5DE52hiimQBsT6GZb9--GkzbzCGL374aTNvMIYnyBctGnG6dRPCuXSanDDvDdbtqB79s4N8IQBn54KTva&_nc_ohc=AZpGcA8JPPIAX8HCdov&_nc_ht=scontent.fhan14-1.fna&cb_e2o_trans=t&oh=00_AfAImMZCHy9_t8309ayVSP-2ocgWi4CywrmdfRh2zjpIlQ&oe=6577ACD6',
-  'https://scontent.fhan14-3.fna.fbcdn.net/v/t31.18172-8/13497581_1085945758158363_1246637142856692752_o.jpg?_nc_cat=110&ccb=1-7&_nc_sid=2be8e3&_nc_eui2=AeFsjnaFDiakJVoS7rCypzKvBc7yzf3fMo0FzvLN_d8yjWSKohPEHiRD5sQIDPR789AxomgCPFJysTNX9PqlsVAG&_nc_ohc=zH8pVjAF_dcAX9F_DhQ&_nc_ht=scontent.fhan14-3.fna&cb_e2o_trans=t&oh=00_AfAN7H39aUBUlD4pgp5PpbfcvUtAsflVKxb4nmaJdM_tYw&oe=6577C447',
-  'https://scontent.fhan14-3.fna.fbcdn.net/v/t31.18172-8/12890919_1028894567196816_4719637949779210026_o.jpg?_nc_cat=110&ccb=1-7&_nc_sid=2be8e3&_nc_eui2=AeHDFXIDIlpi5mKIMQ9Q8vBrJh7A4eeAQIgmHsDh54BAiOW3_mbEuQSppIZRmR3cAAWuRTbxkIduG4YeQGIE0qbE&_nc_ohc=Zenx8kMwwjMAX_8ZAGB&_nc_oc=AQmtubDB3OTlCG1Y3EtZ2GB_P2wBi6if49agmiXZ5ijj-EZscpK7hlGnA5AjEn8yvpstRtV-5qLRjjP-TyXQLpZV&_nc_ht=scontent.fhan14-3.fna&cb_e2o_trans=t&oh=00_AfAc23UEQDFY_oXQQdu7Jla2FAB_3KMpYgYyklPmrzK_xA&oe=6577BCBB',
+  'https://theme.hstatic.net/200000162957/1001007349/14/header_pageabout.jpg?v=136',
+   'https://scontent.fhan14-4.fna.fbcdn.net/v/t39.30808-6/340583161_539754424983491_2424276536403477601_n.jpg?stp=cp6_dst-jpg&_nc_cat=111&ccb=1-7&_nc_sid=783fdb&_nc_ohc=tU0UGFQoTa8AX-hS1Fh&_nc_ht=scontent.fhan14-4.fna&cb_e2o_trans=t&oh=00_AfC3gyPci6tdiJYGXab0XK898PM6gKmqoRuxOwN-igXa0g&oe=657B51EC',
+  'https://scontent.fhan14-3.fna.fbcdn.net/v/t39.30808-6/338521803_1617858412031724_3159037351372515354_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=3635dc&_nc_ohc=cZcAabhwRhMAX9Au_Us&_nc_ht=scontent.fhan14-3.fna&cb_e2o_trans=t&oh=00_AfDyqJ3Yt1alvt8YuOtuBMkBf55kCqQ0Yh77MOfaWKyiDA&oe=657B684B',
+  'https://scontent.fhan14-2.fna.fbcdn.net/v/t39.30808-6/314652746_659151052401915_4700286614345986728_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=dd5e9f&_nc_ohc=s46vju5H8dIAX-NiPDo&_nc_ht=scontent.fhan14-2.fna&cb_e2o_trans=t&oh=00_AfA9uiM07AgZpBvM9KjF1RxPzDMIRbd0cXwChoImMFaQ-g&oe=657C0015',
+  
 ];
 
 const SilderHome = () => {
@@ -67,6 +67,7 @@ const styles = StyleSheet.create({
     marginTop: 20,
     width: '100%',
     height: 200,
+    
   },
   image: {
     width: Dimensions.get('window').width,

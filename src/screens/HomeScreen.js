@@ -3,7 +3,7 @@ import { Text, View, Image, ScrollView, Pressable } from "react-native";
 import React, { useCallback, useContext, useEffect, useState } from "react";
 import { TextInput } from "react-native-gesture-handler";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
-import UserLogo from "../../assets/user.png";
+import Maverik from "../../assets/Maverik.jpg";
 import OfferCard from "../components/OfferCard";
 import NewArrivalsCard from "../components/NewArrivalsCard";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -39,7 +39,7 @@ const Home = ({ navigation }) => {
           {!isLoggedIn &&(
             <Pressable onPress={() => setModalVisible(!modalVisible)} className="flex-row items-center justify-center border border-slate-400 rounded-full ">
               <Image
-                source={UserLogo}
+                source={Maverik}
                 style={{
                   height: 40,
                   width: 40,

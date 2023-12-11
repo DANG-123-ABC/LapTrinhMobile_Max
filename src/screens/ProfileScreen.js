@@ -2,7 +2,7 @@
 import { Text, View, Image,Pressable } from "react-native";
 import React, { useContext } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
-import Dang from "../../assets/dang.png";
+import Maverik from "../../assets/Maverik.jpg";
 import AuthContext from "../features/authContext";
 import { logout } from "../features/firebase/userAuth";
 
@@ -25,7 +25,7 @@ const ProfileScreen = () => {
       <View>
       <View className="mt-16 justify-center items-center">
         <View>
-          <Image source={Dang} className="h-32 w-32 object-cover rounded-full" />
+          <Image source={Maverik} className="h-32 w-32 object-cover rounded-full" />
         </View>
       </View>
         <View className="mt-6">
@@ -37,7 +37,7 @@ const ProfileScreen = () => {
           </View>
           : // false
           <View className="items-center justify-center">
-            <Text className="text-lg font-bold">Đăng nhập để mua hàng nhé!</Text>
+            <Text className="text-lg font-bold">Đăng nhập để mua hàng</Text>
           </View>
           }
         </View>
@@ -46,7 +46,7 @@ const ProfileScreen = () => {
         <View className="justify-center items-center">
           <Pressable onPress={handleLogout} className="bg-black w-full py-4
            rounded-lg">
-            <Text className="font-bold text-white text-center">Log Out</Text>
+            <Text className="font-bold text-white text-center">Đăng xuất</Text>
           </Pressable>
           
         </View>
